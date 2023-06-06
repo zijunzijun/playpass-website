@@ -1,0 +1,34 @@
+.ep-logo {
+  &:before {
+    content: '';
+    @apply absolute left-1/2 top-1/2 transform -translate-x-2/5 -translate-y-55/100 scale-375 w-full h-full bg-no-repeat bg-contain bg-center;
+    background-image: url("/images/logo-fade-bg.svg");
+  }
+}
+
+/* Container */
+.wrapper {
+  @apply w-full max-w-screen-xl mx-auto px-4 md:px-10;
+}
+
+/* Footer */
+footer {
+  .footer-links {
+    @apply py-6 md:py-4 lg:py-0 grid grid-cols-2 md:flex md:space-x-8;
+    a {
+      @apply inline-block py-2 text-sm text-white hover:opacity-70;
+    }
+  }
+  .sns-links {
+    @apply flex items-center space-x-4;
+    a {
+      @apply hover:opacity-80 transition-opacity;
+    }
+  }
+  .tnc-links {
+    @apply flex flex-wrap md:justify-end space-x-4 md:space-x-6;
+    a {
+      @apply inline-block text-white hover:opacity-80 hover:underline;
+    }
+  }
+}

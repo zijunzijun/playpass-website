@@ -2,7 +2,7 @@
 @section('title', 'Welcome to Home Page')
 
 @section('layout')
-    <div class="container mx-auto 2xl w-max pt-8">
+    <div class="wrapper py-20">
         <h2 class="text-3xl">Welcome to Home Page</h2>
     </div>
 @endsection

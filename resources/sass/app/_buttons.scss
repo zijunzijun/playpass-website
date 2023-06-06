@@ -1,0 +1,48 @@
+/* Buttons */
+.btn-base {
+  @apply inline-flex items-center justify-center border border-transparent rounded md:rounded-md text-sm font-medium;
+}
+.btn-outline-base {
+  @apply border-2 border-gray-200 hover:bg-gray-200;
+}
+
+.btn {
+  @extend .btn-base;
+  @apply px-5 py-2.5;
+
+  &:disabled {
+    @apply cursor-not-allowed text-white bg-gray-300 hover:bg-gray-300 #{!important};
+  }
+
+  //Sizes
+  &-lg {
+    @apply text-base font-semibold py-5 px-8;
+  }
+
+  //Colors
+  &-primary {
+    @apply text-white bg-lina-600 hover:bg-lina-700;
+  }
+
+  &-icon {
+    @apply space-x-1;
+  }
+
+  &-outline {
+    @apply bg-white border border-gray-300 hover:bg-gray-100 hover:border-gray-100;
+
+    &-primary {
+      @extend .btn-outline-base;
+      @apply text-gray-900 border-lina-600 hover:bg-lina-600 hover:text-white;
+    }
+
+    &-white {
+      @extend .btn-outline-base;
+      @apply text-white border-white hover:bg-white hover:text-gray-700;
+    }
+
+    &:disabled {
+      @apply cursor-not-allowed text-gray-300 border-gray-300 bg-transparent hover:bg-transparent #{!important};
+    }
+  }
+}

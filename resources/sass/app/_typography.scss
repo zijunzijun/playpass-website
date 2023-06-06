@@ -1,0 +1,28 @@
+// Basic Headers
+h1 {
+  @apply text-2.5xl font-bold;
+}
+
+h2 {
+  @apply text-2xl font-bold;
+}
+
+h3 {
+  @apply text-base font-bold;
+}
+
+
+// Body Text
+.body {
+  &-1 {
+    @apply text-base;
+  }
+
+  &-2 {
+    @apply text-sm;
+  }
+}
+
+.caption {
+  @apply text-xs;
+}
