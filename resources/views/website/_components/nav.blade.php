@@ -41,7 +41,7 @@
                                 How it works
                             </a>
 
-                            <a href="#"
+                            <a href="{{route('website.attractions.index')}}"
                                class="block py-3 lg:py-2 text-lg lg:text-sm font-semibold lg:font-medium text-gray-900 hover:text-gray-700">
                                 Attractions
                             </a>

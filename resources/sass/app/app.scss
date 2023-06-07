@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '~swiper/swiper-bundle.css';
+
 @import "nav";
 @import "typography";
 @import "buttons";
+@import "frontend";

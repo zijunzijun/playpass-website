@@ -1,0 +1,183 @@
+::selection {
+  @apply bg-lina-50 text-lina-600;
+}
+
+.home-header {
+  .cards {
+    @apply grid grid-cols-3 lg:grid-cols-1 my-4 lg:my-0 -mx-1 lg:mx-4;
+    figure {
+      @apply relative transform hover:translate-y-1 md:hover:translate-y-0 md:hover:translate-x-1 transition-all;
+      &:before {
+        content: '';
+        @apply absolute inset-0 w-full h-full;
+      }
+
+      img {
+        @apply w-full lg:w-40;
+      }
+    }
+  }
+}
+
+.card-type {
+  @apply p-6 rounded-xl text-white;
+  .header {
+    @apply flex items-center space-x-2;
+    figure {
+      img {
+        @apply h-12;
+      }
+    }
+
+    .title {
+      @apply flex-1 flex items-center space-x-1.5 font-bold;
+      font-size: 28px;
+      line-height: 1;
+
+      .day {
+        @apply -mt-px;
+        font-size: 66px;
+      }
+    }
+  }
+
+  .details {
+    @apply pt-4 space-y-4 font-medium;
+    .item {
+      .inner {
+        @apply flex items-center;
+      }
+
+      .variant {
+        @apply flex-shrink-0 w-12 text-lg;
+      }
+
+      .dotted {
+        @apply flex-1 mx-2 h-1 bg-repeat-x bg-center;
+        background-image: url('/images/cards/dotted-h.png');
+      }
+
+      .price {
+        @apply flex-shrink-0 w-16 text-lg text-right;
+        &-for-mykad {
+          @apply text-xs text-right opacity-60;
+        }
+      }
+    }
+  }
+}
+
+// USP
+.usp-items {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-0 text-center;
+  .item {
+    .inner {
+      @apply w-40 mx-auto space-y-3.5;
+      figure {
+        @apply w-36 mx-auto relative;
+        &:before {
+          content: '';
+          @apply absolute w-full h-4 bottom-0 left-0 right-0 bg-duffy-100 rounded-b-lg;
+          transition: all 300ms cubic-bezier(0.4, 0, 0.25, 1) 0ms;
+        }
+        &:hover {
+          &:before {
+            @apply h-full rounded-b-lg rounded-t-1/2;
+          }
+        }
+        img {
+          @apply relative w-full;
+        }
+      }
+      p {
+        @apply body-1;
+      }
+    }
+  }
+}
+
+.card-attraction {
+  @apply grid grid-cols-3;
+  &:hover {
+    .details {
+      @apply -rotate-2 -translate-x-px;
+    }
+    .image {
+      @apply rotate-1;
+    }
+  }
+
+  & > * {
+    @apply relative;
+  }
+
+  %cutline-base {
+    content: '';
+    width: 5px;
+    @apply h-full absolute top-0 bottom-0 transform bg-repeat-y bg-contain;
+    background-image: url('/images/cards/rounded-v.png');
+  }
+  %triangle-shape-base {
+    content: '';
+    @apply absolute transform;
+    width: 0;
+    height: 0;
+  }
+
+  .details {
+    @apply col-span-1 rounded-tl-md rounded-bl-md bg-lina-600 p-3 pb-0 text-white h-full transform origin-bottom-right;
+    .inner {
+      @apply w-full h-full space-y-2.5;
+      .name {
+        @apply font-medium;
+      }
+      &:after {
+        @extend %cutline-base;
+        @apply right-0 translate-x-1/2;
+      }
+    }
+    // Triangle Top Right Shape
+    &:before {
+      @extend %triangle-shape-base;
+      @apply top-0 right-0 -translate-y-px;
+      border-left: 6px solid transparent;
+      border-top: 7px solid white;
+    }
+    // Triangle Bottom Right Shape
+    &:after {
+      @extend %triangle-shape-base;
+      @apply bottom-0 right-0 translate-y-px;
+      border-left: 6px solid transparent;
+      border-bottom: 7px solid white;
+    }
+  }
+
+  .image {
+    @apply col-span-2 transform origin-bottom-left;
+    figure {
+      @apply w-full pt-2/3;
+      img {
+        @apply absolute inset-0 rounded-tr-md rounded-br-md w-full h-full object-center object-cover;
+      }
+      &:after {
+        @extend %cutline-base;
+        @apply left-0 -translate-x-1/2;
+      }
+    }
+
+    // Triangle Top Left Shape
+    &:before {
+      @extend %triangle-shape-base;
+      @apply top-0 left-0 -translate-y-px;
+      border-right: 6px solid transparent;
+      border-top: 7px solid white;
+    }
+    // Triangle Bottom Left Shape
+    &:after {
+      @extend %triangle-shape-base;
+      @apply bottom-0 left-0 translate-y-px;
+      border-right: 6px solid transparent;
+      border-bottom: 7px solid white;
+    }
+  }
+}

@@ -77,6 +77,20 @@ module.exports = {
             scale: {
                 '375': '3.75',
             },
+            padding: {
+                "1/2": "50%",
+                "2/3": "66.666667%",
+                full: "100%",
+            },
+            height: {
+                "1/2": "50%",
+            },
+            borderRadius: {
+                "1/2": "50%",
+            },
+            borderWidth: {
+                12: '12px',
+            },
         },
     },
     variants: {

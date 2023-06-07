@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="text-right">
-                    <div class="caption whitespace-nowrap mb-2">
+                    <div class="caption whitespace-nowrap !text-white mb-2">
                         Powered by
                     </div>
                     <img src="{{asset('images/logo-playpinang-white.svg')}}" alt="playpinang logo"
@@ -48,7 +48,7 @@
                             <img src="{{asset('images/logo-ep2020-white.svg')}}" alt=""
                                  class="h-14">
                         </figure>
-                        <div class="max-w-sm caption !leading-5">
+                        <div class="max-w-sm caption !text-white !leading-5">
                             Experience Penang 2020 (EPY2020) is campaign by the Penang State Committee for Tourism,
                             Arts, Culture and Heritage to promote enriching, authentic and immersive local experience
                             for visiting travellers.

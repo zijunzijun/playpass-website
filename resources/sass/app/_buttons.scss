@@ -14,6 +14,22 @@
     @apply cursor-not-allowed text-white bg-gray-300 hover:bg-gray-300 #{!important};
   }
 
+  &-with-icon {
+    @apply relative;
+    span {
+      @apply px-4;
+    }
+    svg {
+      @apply absolute top-1/2 transform -translate-y-1/2;
+    }
+    svg:first-child {
+      @apply left-4;
+    }
+    svg:last-child {
+      @apply right-4;
+    }
+  }
+
   //Sizes
   &-lg {
     @apply text-base font-semibold py-5 px-8;
@@ -45,4 +61,27 @@
       @apply cursor-not-allowed text-gray-300 border-gray-300 bg-transparent hover:bg-transparent #{!important};
     }
   }
+}
+
+// Swiper
+:root {
+  --swiper-theme-color: #000000;
+  --swiper-navigation-size: 22px;
+  --swiper-navigation-sides-offset: 10px;
+  @screen md {
+    --swiper-navigation-sides-offset: -36px;
+  }
+}
+.custom-swiper-button-next,
+.custom-swiper-button-prev {
+  @apply w-8 h-8 absolute top-1/2 transform -translate-y-1/2;
+  svg {
+    @apply w-8 h-8;
+  }
+}
+.custom-swiper-button-next{
+  @apply -right-10;
+}
+.custom-swiper-button-prev{
+  @apply -left-10;
 }
