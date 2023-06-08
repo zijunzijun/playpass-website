@@ -12,7 +12,9 @@ const tailwindcss = require("tailwindcss");
  |
  */
 
-mix.js('resources/js/app/app.js', 'public/js')
+mix.vue({
+   version: 3
+}).js('resources/js/app/app.js', 'public/js')
     .js('resources/js/backend/backend.js', 'public/js')
     .sass('resources/sass/app/app.scss', 'public/css')
     .options({

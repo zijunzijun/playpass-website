@@ -159,7 +159,11 @@
     figure {
       @apply w-full pt-2/3;
       img {
-        @apply absolute inset-0 rounded-tr-md rounded-br-md w-full h-full object-center object-cover;
+        @apply absolute z-0 inset-0 rounded-tr-md rounded-br-md w-full h-full object-center object-cover;
+      }
+      &:before {
+        content: '';
+        @apply w-full h-full absolute inset-0 z-10;
       }
       &:after {
         @extend %cutline-base;
@@ -186,6 +190,7 @@
 
 // Attraction Summary
 .attraction-summary {
+  @apply -mx-4 px-4 pt-2 pb-3 lg:py-0 bg-white;
   %cutline-base {
     content: '';
     height: 5px;
@@ -221,6 +226,7 @@
     }
   }
 }
+
 .summary-list {
   @apply space-y-4;
   .item {
