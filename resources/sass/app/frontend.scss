@@ -96,14 +96,22 @@
   }
 }
 
+%triangle-shape-base {
+  content: '';
+  @apply absolute transform;
+  width: 0;
+  height: 0;
+}
+
 .card-attraction {
   @apply grid grid-cols-3;
-  &:hover {
+  &.selected {
+    @apply grayscale;
     .details {
       @apply -rotate-2 -translate-x-px;
     }
     .image {
-      @apply rotate-1;
+      @apply rotate-1 ;
     }
   }
 
@@ -117,19 +125,13 @@
     @apply h-full absolute top-0 bottom-0 transform bg-repeat-y bg-contain;
     background-image: url('/images/cards/rounded-v.png');
   }
-  %triangle-shape-base {
-    content: '';
-    @apply absolute transform;
-    width: 0;
-    height: 0;
-  }
 
   .details {
     @apply col-span-1 rounded-tl-md rounded-bl-md bg-lina-600 p-3 pb-0 text-white h-full transform origin-bottom-right;
     .inner {
       @apply w-full h-full space-y-2.5;
       .name {
-        @apply font-medium;
+        @apply text-sm lg:text-base font-medium;
       }
       &:after {
         @extend %cutline-base;
@@ -178,6 +180,68 @@
       @apply bottom-0 left-0 translate-y-px;
       border-right: 6px solid transparent;
       border-bottom: 7px solid white;
+    }
+  }
+}
+
+// Attraction Summary
+.attraction-summary {
+  %cutline-base {
+    content: '';
+    height: 5px;
+    @apply w-full absolute left-0 right-0 transform bg-repeat-x bg-contain;
+    background-image: url('/images/cards/rounded-h.png');
+  }
+
+  .top, .bottom {
+    @apply relative rounded-md bg-gray-100 p-4 md:py-6;
+  }
+  .top {
+    &:after {
+      @extend %cutline-base;
+      @apply bottom-0 translate-y-1/2 z-10;
+    }
+  }
+  .bottom {
+    // Triangle Top Right Shape
+    &:before {
+      @extend %triangle-shape-base;
+      @apply top-0 right-0 -translate-y-1/2;
+      border-top: 6px solid transparent;
+      border-right: 7px solid white;
+      border-bottom: 6px solid transparent;
+    }
+    // Triangle Top Left Shape
+    &:after {
+      @extend %triangle-shape-base;
+      @apply top-0 left-0 -translate-y-1/2;
+      border-top: 6px solid transparent;
+      border-left: 7px solid white;
+      border-bottom: 6px solid transparent;
+    }
+  }
+}
+.summary-list {
+  @apply space-y-4;
+  .item {
+    @apply flex space-x-2;
+    .image {
+      @apply flex-shrink-0 w-20;
+      figure {
+        @apply relative w-full pt-2/3 rounded overflow-hidden;
+        img {
+          @apply absolute inset-0 w-full h-full object-center object-cover;
+        }
+      }
+    }
+    .description {
+      @apply grow font-semibold flex flex-col space-y-1;
+      .name {
+        @apply grow body-2;
+      }
+      .price {
+        @apply w-full text-right caption;
+      }
     }
   }
 }

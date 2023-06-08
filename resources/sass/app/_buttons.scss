@@ -8,7 +8,7 @@
 
 .btn {
   @extend .btn-base;
-  @apply px-5 py-2.5;
+  @apply px-5 py-3;
 
   &:disabled {
     @apply cursor-not-allowed text-white bg-gray-300 hover:bg-gray-300 #{!important};
