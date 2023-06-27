@@ -40,7 +40,7 @@
                     Select visit attraction and view your savings.
                 </div>
             </div>
-            <Attractions/>
+            <Attractions checkout-pricing-route="{{ route('website.checkout.pricing') }}"></Attractions>
         </div>
     </div>
 @endsection

@@ -25,7 +25,7 @@
                                 Refund Policy
                             </a>
                         </div>
-                        <a href=""
+                        <a href="{{route('website.checkout.pricing')}}"
                            class="btn btn-outline-white w-full md:w-auto">Buy Now</a>
                     </div>
                 </div>

@@ -369,7 +369,7 @@
                 </div>
             </div>
             <div class="max-w-md mx-auto">
-                <a href=""
+                <a href="{{route('website.attractions.index')}}"
                    class="w-full btn btn-lg btn-outline-primary btn-with-icon">
                     <span>Compare now</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"

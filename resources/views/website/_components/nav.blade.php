@@ -3,7 +3,7 @@
         <div class="wrapper">
             <div class="flex justify-between items-center py-4 lg:justify-start lg:space-x-10">
                 <div class="flex justify-start lg:w-0 lg:flex-1">
-                    <a href="#" class="ep-logo block relative">
+                    <a href="/" class="ep-logo block relative">
                         <span class="sr-only">Experience Penang 2020</span>
                         <img class="h-10 lg:h-16 w-auto relative"
                              src="{{asset('images/logo-ep2020.svg')}}" alt="Experience Penang 2020 Logo">
@@ -31,7 +31,7 @@
                     divide-y-2 divide-gray-50 lg:shadow-none lg:ring-0">
 
                         <div class="flex flex-col lg:flex-row lg:space-x-7 pt-4 pb-2 px-4 md:px-10 lg:px-0">
-                            <a href="#"
+                            <a href="/"
                                class="block py-3 lg:py-2 text-lg lg:text-sm font-semibold lg:font-medium text-gray-900 hover:text-gray-700">
                                 Penang Playpass
                             </a>
@@ -75,7 +75,7 @@
 
 
                         <div class="pt-5 pb-6 px-5 lg:p-0 lg:hidden">
-                            <a href="#"
+                            <a href="{{route('website.checkout.pricing')}}"
                                class="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded shadow-sm text-base font-medium text-white bg-lina-600 hover:bg-lina-700">
                                 Buy Now
                             </a>
@@ -83,7 +83,7 @@
                     </div>
                 </nav>
                 <div class="hidden lg:flex items-center justify-end">
-                    <a href="#"
+                    <a href="{{route('website.checkout.pricing')}}"
                        class="whitespace-nowrap btn btn-primary">
                         Buy Now
                     </a>

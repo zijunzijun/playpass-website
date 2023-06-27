@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col items-start lg:grid lg:grid-cols-12 gap-8 lg:gap-16 pt-6 md:pt-8 pb-32">
+  <div class="flex flex-col items-start lg:grid lg:grid-cols-12 gap-8 lg:gap-16 pt-6 md:pt-8 lg:pb-32">
     <div class="col-span-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 pb-8">
         <div class="card-attraction cursor-pointer"
              :class="{ 'selected': isSelected(attraction) }"
              v-for="attraction in attractions"
@@ -38,7 +38,7 @@
           <div class="top">
             <h3 class="mb-4">Your Attrations</h3>
             <div class="summary-list" v-if="selectedAttractions.length > 0">
-              <div class="item" v-for="attraction in selectedAttractions">
+              <div class="item" v-for="attraction in selectedAttractions" :key="attraction.id">
                 <div class="image">
                   <figure>
                     <img :src="attraction.image"
@@ -91,7 +91,7 @@
             Don't miss out on Penang PlayPass!
           </div>
         </div>
-        <a href="" class="btn btn-primary w-full">Buy now</a>
+        <a :href="checkoutPricingRoute" class="btn btn-primary w-full">Buy now</a>
       </div>
     </div>
   </div>
@@ -99,6 +99,10 @@
 
 <script setup>
 import {computed, ref} from "vue";
+
+const props = defineProps({
+  checkoutPricingRoute: String,
+})
 
 let attractions = ref([
   {
@@ -128,6 +132,118 @@ let attractions = ref([
     price: 61,
     description: 'Included with pass - Normally RM 61',
     image: '/images/attractions/the-top-penang-skywalk.jpg'
+  },
+  {
+    id: 5,
+    name: 'Penang Hill Train (Fast Lane)',
+    price: 80,
+    description: 'Included with pass - Normally RM 80',
+    image: '/images/attractions/penang-hill-train.jpg'
+  },
+  {
+    id: 6,
+    name: 'Art & Garden',
+    price: 30,
+    description: 'Included with pass - Normally RM 30',
+    image: '/images/attractions/art-and-garden.jpg'
+  },
+  {
+    id: 7,
+    name: 'Asia Camera Museum',
+    price: 25,
+    description: 'Included with pass - Normally RM 25',
+    image: '/images/attractions/asia-camera-museum-penang.jpg'
+  },
+  {
+    id: 8,
+    name: 'Audi Dream Farm',
+    price: 70,
+    description: 'Included with pass - Normally RM 70',
+    image: '/images/attractions/audi-dream-farm-penang.jpg'
+  },
+  {
+    id: 9,
+    name: 'Cheong Fatt Tze Mansion',
+    price: 25,
+    description: 'Included with pass - Normally RM 25',
+    image: '/images/attractions/cheong-fatt-tze-museum.jpg'
+  },
+  {
+    id: 10,
+    name: 'Dark Mansion Museum',
+    price: 40,
+    description: 'Included with pass - Normally RM 40',
+    image: '/images/attractions/dark-mansion-3d-glow-in-the-dark-museum.jpg'
+  },
+  {
+    id: 11,
+    name: 'Penang Bird Park',
+    price: 45,
+    description: 'Included with pass - Normally RM 45',
+    image: '/images/attractions/penang-bird-park.jpg'
+  },
+  {
+    id: 12,
+    name: 'Glass Museum Penang',
+    price: 20,
+    description: 'Included with pass - Normally RM 20',
+    image: '/images/attractions/penang-glass-museum.jpg'
+  },
+  {
+    id: 13,
+    name: 'PG Gold Museum',
+    price: 20,
+    description: 'Included with pass - Normally RM 20',
+    image: '/images/attractions/penang-gold-musem.jpg'
+  },
+  {
+    id: 14,
+    name: 'Penang House of Music',
+    price: 30,
+    description: 'Included with pass - Normally RM 30',
+    image: '/images/attractions/penang-house-of-music.jpg'
+  },
+  {
+    id: 15,
+    name: 'Penang War Museum',
+    price: 30,
+    description: 'Included with pass - Normally RM 30',
+    image: '/images/attractions/penang-war-museum.jpg'
+  },
+  {
+    id: 16,
+    name: 'Tech Dome Penang',
+    price: 28,
+    description: 'Included with pass - Normally RM 28',
+    image: '/images/attractions/tech-dome-penang.jpg'
+  },
+  {
+    id: 17,
+    name: 'TeddyVille Museum',
+    price: 36,
+    description: 'Included with pass - Normally RM 36',
+    image: '/images/attractions/teddyville-museum-penang.jpg'
+  },
+  {
+    id: 18,
+    name: 'Tropical Fruit Farm',
+    price: 58,
+    description: 'Included with pass - Normally RM 58',
+    image: '/images/attractions/tropical-fruit-farm.jpg'
+  },
+  {
+    id: 19,
+    name: 'Tropical Spice Garden',
+    price: 28,
+    description: 'Included with pass - Normally RM 28',
+    image: '/images/attractions/tropical-spice-farm.jpg'
+  },
+  {
+    id: 20,
+    name: 'Wonder Food Museum',
+    price: 25,
+    description: 'Included with pass - Normally RM 25',
+    image: '/images/attractions/wonder-food-museum.jpg'
   }
 ])
 

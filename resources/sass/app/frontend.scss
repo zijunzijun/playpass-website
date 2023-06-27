@@ -2,6 +2,11 @@
   @apply bg-lina-50 text-lina-600;
 }
 
+/* Container */
+.wrapper {
+  @apply w-full max-w-screen-xl mx-auto px-4 md:px-10;
+}
+
 .home-header {
   .cards {
     @apply grid grid-cols-3 lg:grid-cols-1 my-4 lg:my-0 -mx-1 lg:mx-4;
@@ -42,28 +47,38 @@
   }
 
   .details {
-    @apply pt-4 space-y-4 font-medium;
+    @apply pt-4 space-y-4 text-lg font-medium;
     .item {
       .inner {
         @apply flex items-center;
       }
 
       .variant {
-        @apply flex-shrink-0 w-12 text-lg;
+        @apply flex-shrink-0 w-12;
       }
 
       .dotted {
-        @apply flex-1 mx-2 h-1 bg-repeat-x bg-center;
-        background-image: url('/images/cards/dotted-h.png');
+        @apply flex-1 mx-2 h-0.5 bg-repeat-x bg-left bg-center bg-contain;
+        background-image: url('/images/cards/dotted-h-white.png');
       }
 
       .price {
-        @apply flex-shrink-0 w-16 text-lg text-right;
+        @apply flex-shrink-0 w-16 text-right;
         &-for-mykad {
           @apply text-xs text-right opacity-60;
         }
       }
     }
+  }
+}
+
+.quantity-toggle {
+  @apply flex;
+  button {
+    @apply flex-shrink-0 w-6 h-6 border-gray-900 bg-white rounded-full;
+  }
+  input {
+    @apply w-8 flex-1 appearance-none outline-none text-center bg-transparent font-semibold text-lina-600;
   }
 }
 
@@ -80,15 +95,18 @@
           @apply absolute w-full h-4 bottom-0 left-0 right-0 bg-duffy-100 rounded-b-lg;
           transition: all 300ms cubic-bezier(0.4, 0, 0.25, 1) 0ms;
         }
+
         &:hover {
           &:before {
             @apply h-full rounded-b-lg rounded-t-1/2;
           }
         }
+
         img {
           @apply relative w-full;
         }
       }
+
       p {
         @apply body-1;
       }
@@ -110,6 +128,7 @@
     .details {
       @apply -rotate-2 -translate-x-px;
     }
+
     .image {
       @apply rotate-1 ;
     }
@@ -133,11 +152,13 @@
       .name {
         @apply text-sm lg:text-base font-medium;
       }
+
       &:after {
         @extend %cutline-base;
         @apply right-0 translate-x-1/2;
       }
     }
+
     // Triangle Top Right Shape
     &:before {
       @extend %triangle-shape-base;
@@ -145,6 +166,7 @@
       border-left: 6px solid transparent;
       border-top: 7px solid white;
     }
+
     // Triangle Bottom Right Shape
     &:after {
       @extend %triangle-shape-base;
@@ -161,10 +183,12 @@
       img {
         @apply absolute z-0 inset-0 rounded-tr-md rounded-br-md w-full h-full object-center object-cover;
       }
+
       &:before {
         content: '';
         @apply w-full h-full absolute inset-0 z-10;
       }
+
       &:after {
         @extend %cutline-base;
         @apply left-0 -translate-x-1/2;
@@ -178,6 +202,7 @@
       border-right: 6px solid transparent;
       border-top: 7px solid white;
     }
+
     // Triangle Bottom Left Shape
     &:after {
       @extend %triangle-shape-base;
@@ -190,7 +215,7 @@
 
 // Attraction Summary
 .attraction-summary {
-  @apply -mx-4 px-4 pt-2 pb-3 lg:py-0 bg-white;
+  @apply -mx-4 px-4 md:-mx-10 md:px-10 lg:mx-0 lg:px-0 pt-2 pb-3 lg:py-0 bg-white drop-shadow lg:drop-shadow-none;
   %cutline-base {
     content: '';
     height: 5px;
@@ -201,12 +226,14 @@
   .top, .bottom {
     @apply relative rounded-md bg-gray-100 p-4 md:py-6;
   }
+
   .top {
     &:after {
       @extend %cutline-base;
       @apply bottom-0 translate-y-1/2 z-10;
     }
   }
+
   .bottom {
     // Triangle Top Right Shape
     &:before {
@@ -216,6 +243,7 @@
       border-right: 7px solid white;
       border-bottom: 6px solid transparent;
     }
+
     // Triangle Top Left Shape
     &:after {
       @extend %triangle-shape-base;
@@ -225,28 +253,172 @@
       border-bottom: 6px solid transparent;
     }
   }
-}
 
-.summary-list {
-  @apply space-y-4;
-  .item {
-    @apply flex space-x-2;
-    .image {
-      @apply flex-shrink-0 w-20;
-      figure {
-        @apply relative w-full pt-2/3 rounded overflow-hidden;
-        img {
-          @apply absolute inset-0 w-full h-full object-center object-cover;
+  .summary-list {
+    @apply space-y-4;
+    .item {
+      @apply flex space-x-2;
+      .image {
+        @apply flex-shrink-0 w-20;
+        figure {
+          @apply relative w-full pt-2/3 rounded overflow-hidden;
+          img {
+            @apply absolute inset-0 w-full h-full object-center object-cover;
+          }
+        }
+      }
+
+      .description {
+        @apply grow font-semibold flex flex-col space-y-1;
+        .name {
+          @apply grow body-2;
+        }
+
+        .price {
+          @apply w-full text-right caption;
         }
       }
     }
-    .description {
-      @apply grow font-semibold flex flex-col space-y-1;
-      .name {
-        @apply grow body-2;
+  }
+}
+
+
+// Pricing Page
+.card-pricing {
+  @apply py-4 px-5 rounded-xl text-gray-900 border border-gray-900 cursor-pointer;
+  .header {
+    @apply flex items-center space-x-2;
+    figure {
+      @apply relative;
+      img {
+        @apply relative h-9;
       }
+      span {
+        @apply absolute inset-px rounded;
+      }
+    }
+
+    .title {
+      @apply flex-1 text-lg font-semibold leading-tight;
+      span {
+        @apply block text-xs;
+      }
+    }
+  }
+
+  .details {
+    @apply pt-4 space-y-2 text-sm font-medium;
+    .item {
+      .inner {
+        @apply flex items-center;
+      }
+
+      .variant {
+        @apply flex-shrink-0 w-9;
+      }
+
+      .dotted {
+        @apply flex-1 mx-2 bg-repeat-x bg-left bg-contain;
+        height: 1.5px;
+        background-image: url('/images/cards/dotted-h-black.png');
+      }
+
       .price {
-        @apply w-full text-right caption;
+        @apply flex-shrink-0 text-right;
+      }
+    }
+  }
+
+  &.selected {
+    @apply text-white;
+    .details {
+      .item {
+        .dotted {
+          background-image: url('/images/cards/dotted-h-white.png');
+        }
+      }
+    }
+  }
+}
+.card-quantity {
+  @apply py-4 px-5 rounded-xl text-gray-900 bg-gray-100 flex items-center;
+  .name {
+    @apply text-lg font-semibold leading-tight flex-1;
+    span {
+      @apply text-xs font-normal;
+    }
+  }
+}
+
+// Cart Summary
+.cart-summary {
+  @apply -mx-4 px-4 md:-mx-10 md:px-10 lg:mx-0 lg:px-0 pt-2 pb-3 lg:py-0 bg-white drop-shadow lg:drop-shadow-none;
+  %cutline-base {
+    content: '';
+    height: 5px;
+    @apply w-full absolute left-0 right-0 transform bg-repeat-x bg-contain;
+    background-image: url('/images/cards/rounded-h.png');
+  }
+
+  .top, .bottom {
+    @apply relative rounded-md bg-gray-100 p-4 md:py-6;
+  }
+
+  .top {
+    &:after {
+      @extend %cutline-base;
+      @apply bottom-0 translate-y-1/2 z-10;
+    }
+  }
+
+  .bottom {
+    // Triangle Top Right Shape
+    &:before {
+      @extend %triangle-shape-base;
+      @apply top-0 right-0 -translate-y-1/2;
+      border-top: 6px solid transparent;
+      border-right: 7px solid white;
+      border-bottom: 6px solid transparent;
+    }
+
+    // Triangle Top Left Shape
+    &:after {
+      @extend %triangle-shape-base;
+      @apply top-0 left-0 -translate-y-1/2;
+      border-top: 6px solid transparent;
+      border-left: 7px solid white;
+      border-bottom: 6px solid transparent;
+    }
+  }
+
+  .summary-list {
+    @apply space-y-4;
+    .item {
+      @apply flex space-x-2 flex-wrap;
+      .image {
+        @apply flex-shrink-0 w-20;
+        figure {
+          @apply relative w-full pt-2/3 rounded overflow-hidden;
+          img {
+            @apply absolute inset-0 w-full h-full object-center object-cover;
+          }
+        }
+      }
+
+      .description {
+        @apply grow font-semibold flex flex-col space-y-1;
+        .name {
+          @apply grow body-2;
+          span {
+            @apply block text-xs;
+          }
+        }
+      }
+      .variant {
+        @apply w-full flex items-center justify-between m-1 space-x-2 body-2;
+        .price {
+          @apply font-medium;
+        }
       }
     }
   }

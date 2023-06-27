@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Website\AttractionController;
+use App\Http\Controllers\Website\CheckoutController;
 use App\Http\Controllers\Website\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +20,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WebsiteController::class, 'index'])->name('website.index');
 Route::get('attractions', [AttractionController::class, 'index'])->name('website.attractions.index');
+Route::get('pricing', [CheckoutController::class, 'showPricing'])->name('website.checkout.pricing');
 
