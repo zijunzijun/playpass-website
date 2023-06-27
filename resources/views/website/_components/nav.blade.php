@@ -1,12 +1,11 @@
 <header>
-    <div class="relative bg-duffy-100 lg:rounded-b-3xl">
+    <div class="relative bg-duffy-100 @if(isset($navRounded) && $navRounded === true) lg:rounded-b-3xl @endif">
         <div class="wrapper">
             <div class="flex justify-between items-center py-4 lg:justify-start lg:space-x-10">
                 <div class="flex justify-start lg:w-0 lg:flex-1">
-                    <a href="/" class="ep-logo block relative">
+                    <a href="/" class="ep-logo">
                         <span class="sr-only">Experience Penang 2020</span>
-                        <img class="h-10 lg:h-16 w-auto relative"
-                             src="{{asset('images/logo-ep2020.svg')}}" alt="Experience Penang 2020 Logo">
+                        <img src="{{asset('images/logo-ep2020.svg')}}" alt="Experience Penang 2020 Logo">
                     </a>
                 </div>
                 {{--Toogle button--}}
@@ -23,36 +22,31 @@
                         </svg>
                     </button>
                 </div>
-                <nav id="menu" class="absolute z-10 top-0 inset-x-0 hidden
-                transform origin-top-right
-                transition duration-100 ease-in
-                lg:relative lg:block">
-                    <div class="bg-white lg:bg-transparent rounded-lg shadow-lg ring-1 ring-black ring-opacity-5
-                    divide-y-2 divide-gray-50 lg:shadow-none lg:ring-0">
-
-                        <div class="flex flex-col lg:flex-row lg:space-x-7 pt-4 pb-2 px-4 md:px-10 lg:px-0">
+                <nav id="menu" class="hidden lg:block">
+                    <div class="inner">
+                        <div class="links">
                             <a href="/"
-                               class="block py-3 lg:py-2 text-lg lg:text-sm font-semibold lg:font-medium text-gray-900 hover:text-gray-700">
+                               class="link">
                                 Penang Playpass
                             </a>
 
-                            <a href="#"
-                               class="block py-3 lg:py-2 text-lg lg:text-sm font-semibold lg:font-medium text-gray-900 hover:text-gray-700">
+                            <a role="link" aria-disabled="true"
+                               class="link">
                                 How it works
                             </a>
 
                             <a href="{{route('website.attractions.index')}}"
-                               class="block py-3 lg:py-2 text-lg lg:text-sm font-semibold lg:font-medium text-gray-900 hover:text-gray-700">
+                               class="link">
                                 Attractions
                             </a>
 
-                            <a href="#"
-                               class="block py-3 lg:py-2 text-lg lg:text-sm font-semibold lg:font-medium text-gray-900 hover:text-gray-700">
+                            <a role="link" aria-disabled="true"
+                               class="link">
                                 Guidebook
                             </a>
 
                             <div class="order-first mb-4 flex items-center justify-between lg:hidden">
-                                <div class="">
+                                <div>
                                     <img class="h-10 lg:h-16 w-auto relative"
                                          src="{{asset('images/logo-ep2020.svg')}}" alt="Experience Penang 2020 Logo">
                                 </div>

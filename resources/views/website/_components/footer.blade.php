@@ -13,7 +13,7 @@
                                 How it works
                             </a>
 
-                            <a href="#">
+                            <a href="{{route('website.attractions.index')}}">
                                 Attractions
                             </a>
 

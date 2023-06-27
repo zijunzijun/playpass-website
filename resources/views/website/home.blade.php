@@ -5,7 +5,7 @@
     <div class="home-header bg-duffy-100">
         <div class="wrapper">
             <div class="pt-20 lg:flex items-center justify-center">
-                <div class="text-7xl lg:text-6xl font-bold">One Pass</div>
+                <div class="text-7xl lg:text-6xl font-bold lg:text-right">One Pass</div>
                 <div class="cards">
                     <figure>
                         <img src="{{asset('images/cards/card-1-day.png')}}" alt="">

@@ -1,4 +1,4 @@
-@extends('website._layouts.app')
+@extends('website._layouts.app', ['navRounded' => true])
 @section('title', 'Buy Now | Penang Playpass')
 
 @section('layout')

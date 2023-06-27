@@ -1,8 +1,32 @@
 .ep-logo {
+  @apply block relative;
+  img {
+    @apply h-10 lg:h-16 w-auto relative;
+  }
   &:before {
     content: '';
     @apply absolute left-1/2 top-1/2 transform -translate-x-2/5 -translate-y-55/100 scale-375 w-full h-full bg-no-repeat bg-contain bg-center;
     background-image: url("/images/logo-fade-bg.svg");
+  }
+}
+
+#menu {
+  @apply absolute z-10 top-0 inset-x-0
+  transform origin-top-right
+  transition duration-100 ease-in
+  lg:relative;
+  .inner {
+    @apply bg-white lg:bg-transparent rounded-lg shadow-lg ring-1 ring-black ring-opacity-5
+    divide-y-2 divide-gray-50 lg:shadow-none lg:ring-0;
+    .links {
+      @apply flex flex-col lg:flex-row lg:space-x-7 pt-4 pb-2 px-4 md:px-10 lg:px-0;
+      .link {
+        @apply block py-3 lg:py-2 text-lg lg:text-sm font-semibold lg:font-medium text-gray-900 hover:opacity-80;
+        &[aria-disabled="true"] {
+          @apply opacity-60 cursor-not-allowed;
+        }
+      }
+    }
   }
 }
 
