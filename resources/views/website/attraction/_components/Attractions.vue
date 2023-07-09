@@ -48,7 +48,7 @@
                 <div class="description">
                   <div class="name">{{ attraction.name }}</div>
                   <div class="price">
-                    Normally <span class="text-lina-600">RM 45</span>
+                    Normally <span class="text-lina-600">RM {{ attraction.price}}</span>
                   </div>
                 </div>
               </div>
@@ -271,7 +271,7 @@ let totalCost = computed(() => {
   return selectedAttractions.value.reduce((sum, attraction) => sum + attraction.price, 0);
 });
 
-let passPrice = ref(100);
+let passPrice = ref(149);
 
 let totalSaving = computed(() => {
   return totalCost.value - passPrice.value;
