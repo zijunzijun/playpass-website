@@ -1,3 +1,6 @@
+<div class="relative z-10 p-4 bg-lina-600 text-sm lg:text-base text-center text-white">
+    <span class="font-semibold">My portfolio site is here!</span> | <a href="https://jun-teoh-portfolio.vercel.app" class="hover:underline">Click here to view</a>
+</div>
 <header>
     <div class="relative bg-duffy-100 @if(isset($navRounded) && $navRounded === true) lg:rounded-b-3xl @endif">
         <div class="wrapper">
